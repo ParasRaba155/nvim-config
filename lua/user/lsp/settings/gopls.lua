@@ -11,25 +11,33 @@ M = {
         gopls = {
             completeUnimported = true,
             usePlaceholders    = true,
+            vulncheck = "Imports",
             analyses           = {
-                unusedparams = true,
-                fieldalignment = true,
+                -- unusedparams = true,
+                -- fieldalignment = true,
                 nilness = true,
                 unusedwrite = true,
-                useany = false,
+                -- useany = false,
                 fillstruct = true,
             },
             gofumpt            = true,
-            hints              = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                parameterNames = true,
-                rangeVariableTypes = true
-            },
+            -- hints              = {
+                -- assignVariableTypes = true,
+                -- compositeLiteralFields = true,
+                -- compositeLiteralTypes = true,
+                -- constantValues = true,
+                -- parameterNames = true,
+                -- rangeVariableTypes = true
+            -- },
         }
     }
 }
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.go',
+    callback = function()
+        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end
+})
 
 return M

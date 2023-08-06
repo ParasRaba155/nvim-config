@@ -7,9 +7,9 @@ local servers = {
     "lua_ls",
     "gopls",
     "tsserver",
-    "ansiblels",
     "docker_compose_language_service",
-    "dockerls"
+    "dockerls",
+    "sqlls",
 }
 
 local settings = {

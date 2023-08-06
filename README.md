@@ -26,3 +26,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 sudo apt-get install xclip
 sudo apt-get install xsel
 ```
+
+## Install the `nerd` fonts

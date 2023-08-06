@@ -15,27 +15,43 @@ local diagnostics  = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
 local opts         = {
-    debug = true,
+    debug = false,
     sources = {
         formatting.gofumpt,
         formatting.goimports_reviser,
-        formatting.eslint,
+        formatting.prettier,
+        -- formatting.eslint,
         -- formatting.eslint,
         -- formatting.sqlfluff.with({
         --     extra_args = { "--dialect", "postgres" }, -- change to your dialect
         -- }),
         code_actions.gomodifytags,
         code_actions.eslint,
+        code_actions.refactoring,
         -- code_actions.gitsings,
         completion.spell,
         completion.luasnip,
         diagnostics.staticcheck,
         diagnostics.eslint,
-        -- diagnostics.eslint,
-        -- diagnositcs.golangci_lint,
+        diagnostics.golangci_lint,
         diagnostics.todo_comments,
         -- diagnositcs.tsc,
     },
+    -- on_attach = function(client, bufnr)
+    --     if client.supports_method("textDocument/formatting") then
+    --         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    --         vim.api.nvim_create_autocmd("BufWritePre", {
+    --             group = augroup,
+    --             buffer = bufnr,
+    --             callback = function()
+    --                 -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+    --                 -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
+    --                 -- vim.lsp.buf.formatting_sync()
+    --                 vim.lsp.buf.format({ async = false })
+    --             end,
+    --         })
+    --     end
+    -- end,
 }
 
 null_ls.setup(opts)

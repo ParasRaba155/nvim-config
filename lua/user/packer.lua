@@ -39,6 +39,18 @@ return require('packer').startup(function(use)
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
 
+    -- db connection
+    use ("tpope/vim-dadbod")
+    use {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = { "tpope/vim-dadbod"},
+    }
+    use {
+        "kristijanhusak/vim-dadbod-completion",
+        dependencies = { "tpope/vim-dadbod"},
+    }
+
+
 
     use {
         "williamboman/mason.nvim",
@@ -58,7 +70,11 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-buffer')
     use('hrsh7th/cmp-path')
     use("hrsh7th/cmp-nvim-lsp")
-    use("L3MON4D3/LuaSnip")
+    use({
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    })
+    use("rafamadriz/friendly-snippets")
 
     -- null ls for general purpose lsp configs
     use({
@@ -100,10 +116,6 @@ return require('packer').startup(function(use)
     -- color picker
     use 'NvChad/nvim-colorizer.lua'
 
-    -- for transparent background
-    use 'xiyaowong/transparent.nvim'
-
-    -- gopher gives additional go tooling
     use {
         "olexsmir/gopher.nvim",
         requires = { -- dependencies
@@ -114,13 +126,21 @@ return require('packer').startup(function(use)
     -- for auto closing tag 
     use 'windwp/nvim-ts-autotag',
 
-    -- for file tree
-    -- use {
-    --     'nvim-tree/nvim-tree.lua',
-    --     requires = {
-    --         '-- nvim-tree/nvim-web-devicons', -- optional
-    --     },
-    -- },
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    }),
+
+    use({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter' },
+    }),
+
+    -- awesome theme
+    use("rebelot/kanagawa.nvim"),
+
+    -- treesiter context for folding functions
+    use("nvim-treesitter/nvim-treesitter-context")
 
 }
 end)
