@@ -25,6 +25,11 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- treesitter object
+    use {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+    }
+
     use("mbbill/undotree")
 
     -- harpoon for marking and jumping between multiple files

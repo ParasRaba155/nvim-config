@@ -17,32 +17,10 @@ require'nvim-treesitter.configs'.setup {
         "css",
         "toml"
     },
+    auto_install = false,
 
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
-
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = true,
-
-    -- List of parsers to ignore installing (for "all")
-    ignore_install = { "javascript" },
-
-    -- settnig up autotag 
-    autotag = {
-        enable = true
-    },
-
-    ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-    -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-    highlight = {
-        enable = true,
-
-        additional_vim_regex_highlighting = false,
-    },
-
-    -- allows for incremental selection according to the language that you are working with
+    highlight = { enable = true },
+    indent = { enable = true },
     incremental_selection = {
         enable = true,
         keymaps = {
@@ -56,7 +34,7 @@ require'nvim-treesitter.configs'.setup {
         select = {
             enable = true,
             lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-            keymaps = {
+            keymaps = { 
                 -- You can use the capture groups defined in textobjects.scm
                 ['aa'] = '@parameter.outer',
                 ['ia'] = '@parameter.inner',
@@ -66,34 +44,34 @@ require'nvim-treesitter.configs'.setup {
                 ['ic'] = '@class.inner',
             },
         },
-    },
-    move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-            [']m'] = '@function.outer',
-            [']]'] = '@class.outer',
+        move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                [']m'] = '@function.outer',
+                [']]'] = '@class.outer',
+            },
+            goto_next_end = {
+                [']M'] = '@function.outer',
+                [']['] = '@class.outer',
+          },
+            goto_previous_start = {
+                ['[m'] = '@function.outer',
+                ['[['] = '@class.outer',
+          },
+            goto_previous_end = {
+                ['[M'] = '@function.outer',
+                ['[]'] = '@class.outer',
+          },
         },
-        goto_next_end = {
-            [']M'] = '@function.outer',
-            [']['] = '@class.outer',
-        },
-        goto_previous_start = {
-            ['[m'] = '@function.outer',
-            ['[['] = '@class.outer',
-        },
-        goto_previous_end = {
-            ['[M'] = '@function.outer',
-            ['[]'] = '@class.outer',
-        },
-    },
-    swap = {
-        enable = true,
-        swap_next = {
+        swap = {
+          enable = true,
+          swap_next = {
             ['<leader>a'] = '@parameter.inner',
-        },
-        swap_previous = {
+          },
+          swap_previous = {
             ['<leader>A'] = '@parameter.inner',
+          },
         },
-    },
-}
+      },
+    }
