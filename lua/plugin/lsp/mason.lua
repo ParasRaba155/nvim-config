@@ -1,5 +1,6 @@
 local utils_status, util = pcall(require, "lspconfig/util")
 if not utils_status then
+    print("could not load lspconfig/util in mason.lua")
     return
 end
 
@@ -43,7 +44,7 @@ mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
-      on_attach = require('user.lsp.lsp').on_attach,
+      on_attach = require('plugin.lsp.lsp').on_attach,
       settings = servers[server_name],
     }
   end,
@@ -53,7 +54,7 @@ local global_opts = {}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
-  print("Lspconfig not found")
+  print("Lspconfig not found in maosn.lua")
 	return
 end
 
@@ -61,14 +62,14 @@ end
 for _, server in pairs(servers) do
     local opts = {
         -- getting "on_attach" and capabilities from handlers
-        on_attach = require("user.lsp.lsp").on_attach,
+        on_attach = require("plugin.lsp.lsp").on_attach,
         capabilities = capabilities,
     }
 
     -- get the server name
     server = vim.split(server, "@")[1]
 
-    local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
+    local require_ok, conf_opts = pcall(require, "plugin.lsp.settings." .. server)
     if require_ok then
         opts = vim.tbl_deep_extend("force", global_opts, opts, conf_opts)
     end

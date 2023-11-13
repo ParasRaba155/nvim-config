@@ -20,6 +20,7 @@ local opts         = {
         formatting.gofumpt,
         formatting.goimports_reviser,
         formatting.prettier,
+        formatting.black,
         -- formatting.eslint,
         -- formatting.eslint,
         -- formatting.sqlfluff.with({
@@ -35,6 +36,7 @@ local opts         = {
         diagnostics.eslint,
         diagnostics.golangci_lint,
         diagnostics.todo_comments,
+        diagnostics.pylint,
         -- diagnositcs.tsc,
     },
     -- on_attach = function(client, bufnr)

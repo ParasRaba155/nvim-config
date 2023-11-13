@@ -14,21 +14,21 @@ M = {
             vulncheck = "Imports",
             analyses           = {
                 -- unusedparams = true,
-                -- fieldalignment = true,
+                fieldalignment = true,
                 nilness = true,
                 unusedwrite = true,
                 -- useany = false,
                 fillstruct = true,
             },
             gofumpt            = true,
-            -- hints              = {
-                -- assignVariableTypes = true,
-                -- compositeLiteralFields = true,
-                -- compositeLiteralTypes = true,
-                -- constantValues = true,
-                -- parameterNames = true,
-                -- rangeVariableTypes = true
-            -- },
+            hints              = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                parameterNames = true,
+                rangeVariableTypes = true
+            },
         }
     }
 }

@@ -11,6 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- line wrapping
+vim.opt.colorcolumn = "80"
 vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
