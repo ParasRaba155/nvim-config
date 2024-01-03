@@ -82,6 +82,7 @@ return {
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },
+        version = "v2.*",
     },
     'rafamadriz/friendly-snippets',
 
@@ -126,7 +127,7 @@ return {
 
     -- for auto closing tag 
     'windwp/nvim-ts-autotag',
-    
+
     -- neovim surround
     'kylechui/nvim-surround',
 
@@ -139,6 +140,17 @@ return {
    'rebelot/kanagawa.nvim',
 
     -- treesiter context for folding functions
-    'nvim-treesitter/nvim-treesitter-context'
+    -- 'nvim-treesitter/nvim-treesitter-context'
 
+    -- twilight by folke to highlight the block working on
+    -- Lua
+    {
+      "folke/twilight.nvim",
+      opts = {
+          exclude = {'md'}, -- exclude these filetypes
+      }
+    },
+
+    -- mini files
+    { 'echasnovski/mini.nvim', version = false },
 }

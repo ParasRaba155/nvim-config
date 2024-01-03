@@ -37,6 +37,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- to hightlight the space characters
+vim.cmd(':set listchars=tab:>·,trail:~,extends:>,precedes:<,space:.')
+vim.cmd(':set list')
+
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 

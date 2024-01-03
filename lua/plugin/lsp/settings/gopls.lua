@@ -11,23 +11,25 @@ M = {
         gopls = {
             completeUnimported = true,
             usePlaceholders    = true,
-            vulncheck = "Imports",
+            staticcheck        = true,
+            vulncheck          = "Imports",
+            gofumpt            = true,
             analyses           = {
                 -- unusedparams = true,
                 fieldalignment = true,
-                nilness = true,
-                unusedwrite = true,
-                -- useany = false,
-                fillstruct = true,
+                nilness        = true,
+                unusedwrite    = true,
+                -- useany      = false,
+                fillstruct     = true,
             },
-            gofumpt            = true,
             hints              = {
-                assignVariableTypes = true,
+                assignVariableTypes    = true,
+                functionTypeParameters = true,
                 compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                parameterNames = true,
-                rangeVariableTypes = true
+                compositeLiteralTypes  = true,
+                constantValues         = true,
+                parameterNames         = true,
+                rangeVariableTypes     = true
             },
         }
     }
