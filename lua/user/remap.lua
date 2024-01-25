@@ -41,16 +41,25 @@ vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", { noremap = true })
 vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", { noremap = true })
 vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", { noremap = true })
 vim.keymap.set("n", "<M-k>", ":wincmd k<CR>", { noremap = true })
-
--- resize the split window
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
+-- better buffer manipulation using tab and shift tab
+vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<cr>", { noremap = true })
+vim.keymap.set("n", "<bs>", ":bprevious<cr>", { noremap = true })
+
+-- Buffers mapping using Telescope
+vim.keymap.set('n', '<S-Tab>', ":Telescope buffers<CR>",
+    { noremap = true, silent = true, nowait = true })
 
 -- spell check and correcting the worjkjk spellin
-vim.keymap.set("n", "<F3>", "silent :set spell!<CR>")
+vim.keymap.set("n", "<F7>", ":set spell!<CR>", { noremap = true})
 
 -- scroll horiontally
 vim.keymap.set("n", "<leader>l", "20zl")
+
+-- tab management
+vim.keymap.set("n", "<A-Right>", ":tabnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Left>", ":tabprevious<CR>", { noremap = true, silent = true })

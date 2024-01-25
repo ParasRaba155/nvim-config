@@ -3,6 +3,8 @@ vim.keymap.set("n","<leader>dt",":lua require('dap-go').debug_test()", { desc = 
 require('dap-go').setup()
 local dap = require('dap')
 
+-- For some reason we will have to put main.go in the root folder
+-- to debug the code
 dap.adapters.go = function(callback, config)
     local stdout = vim.loop.new_pipe(false)
     local handle

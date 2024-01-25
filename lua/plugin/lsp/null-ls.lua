@@ -21,6 +21,7 @@ local opts         = {
         formatting.goimports_reviser,
         formatting.prettier,
         formatting.black,
+        formatting.sqlfmt,
         -- formatting.eslint,
         -- formatting.eslint,
         -- formatting.sqlfluff.with({
