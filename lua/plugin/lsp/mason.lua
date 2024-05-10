@@ -11,6 +11,7 @@ local servers = {
     "docker_compose_language_service",
     "dockerls",
     "sqlls",
+    "pyright",
 }
 
 local settings = {

@@ -70,7 +70,14 @@ return {
 
     -- DAP config
     'mfussenegger/nvim-dap', -- for general purpose dap
-    'rcarriga/nvim-dap-ui',
+    -- 'rcarriga/nvim-dap-ui',
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio"
+        }
+    },
     'leoluz/nvim-dap-go', -- dap for golang
     'theHamsta/nvim-dap-virtual-text',
 
@@ -88,7 +95,7 @@ return {
 
     -- null ls for general purpose lsp configs
     {
-        'jose-elias-alvarez/null-ls.nvim',
+        'nvimtools/none-ls.nvim',
         config = function()
             require('null-ls').setup()
         end,

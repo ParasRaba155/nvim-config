@@ -21,16 +21,10 @@ local opts         = {
         formatting.goimports_reviser,
         formatting.prettier,
         formatting.black,
-        formatting.sqlfmt,
         -- formatting.eslint,
-        -- formatting.eslint,
-        -- formatting.sqlfluff.with({
-        --     extra_args = { "--dialect", "postgres" }, -- change to your dialect
-        -- }),
         code_actions.gomodifytags,
         code_actions.eslint,
         code_actions.refactoring,
-        -- code_actions.gitsings,
         completion.spell,
         completion.luasnip,
         diagnostics.staticcheck,
@@ -38,7 +32,7 @@ local opts         = {
         diagnostics.golangci_lint,
         diagnostics.todo_comments,
         diagnostics.pylint,
-        -- diagnositcs.tsc,
+        diagnostics.tsc,
     },
     -- on_attach = function(client, bufnr)
     --     if client.supports_method("textDocument/formatting") then

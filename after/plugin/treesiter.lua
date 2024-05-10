@@ -5,6 +5,7 @@ require'nvim-treesitter.configs'.setup {
         "lua",
         "vim",
         "query",
+        "java",
         "javascript",
         "typescript",
         "go",
@@ -15,7 +16,9 @@ require'nvim-treesitter.configs'.setup {
         "yaml",
         "html",
         "css",
-        "toml"
+        "toml",
+        "xml",
+        "python",
     },
     auto_install = false,
 
