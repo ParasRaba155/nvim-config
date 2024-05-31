@@ -45,5 +45,14 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'freindly-snippets' },
     { name = 'vim-dadbod-completion' },
+    { name = "buffer" },
   },
 }
+
+-- Setup up vim-dadbod
+cmp.setup.filetype({ "sql" }, {
+  sources = {
+    { name = "vim-dadbod-completion" },
+    { name = "buffer" },
+  },
+})

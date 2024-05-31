@@ -159,4 +159,14 @@ return {
 
     -- mini files
     { 'echasnovski/mini.nvim', version = false },
+
+    -- precognition for visual help text on next set of chars
+    {"tris203/precognition.nvim",},
+
+    -- hardtime to fix some bad vim habits
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {}
+    }
 }

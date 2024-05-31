@@ -1,6 +1,4 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-
-
 vim.keymap.set("n","<leader>ga",":Git add %:p<CR><CR>")
 vim.keymap.set("n","<leader>gi",":Git init")
 vim.keymap.set("n","<leader>gc",":Git commit -v -q<CR>")
