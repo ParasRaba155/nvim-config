@@ -36,9 +36,9 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- split screen and navigation
-vim.keymap.set("n", "<M-v>", ":vsplit<CR><C-w>l", { noremap = true })
-vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", { noremap = true })
-vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", { noremap = true })
+vim.keymap.set("n", "<C-w>", ":vsplit<CR><C-w>l", { noremap = true })
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { noremap = true })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { noremap = true })
 vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", { noremap = true })
 vim.keymap.set("n", "<M-k>", ":wincmd k<CR>", { noremap = true })
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
