@@ -17,8 +17,8 @@ local code_actions = null_ls.builtins.code_actions
 local opts         = {
     debug = false,
     sources = {
-        formatting.gofumpt,
-        formatting.goimports_reviser,
+        formatting.gofmt,
+        -- formatting.goimports_reviser,
         formatting.prettier,
         formatting.black,
         -- formatting.eslint,

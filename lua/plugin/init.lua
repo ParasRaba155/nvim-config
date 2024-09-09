@@ -170,4 +170,9 @@ return {
     --     opts = {}
     -- },
 
+    -- format only the diffs
+    {
+        'joechrisellis/lsp-format-modifications.nvim', version = false
+    }
+
 }
