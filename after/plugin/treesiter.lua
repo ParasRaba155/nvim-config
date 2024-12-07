@@ -19,6 +19,7 @@ require'nvim-treesitter.configs'.setup {
         "toml",
         "xml",
         "python",
+        "rust",
     },
     auto_install = false,
 
