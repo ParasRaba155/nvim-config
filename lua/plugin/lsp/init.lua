@@ -8,3 +8,4 @@ require("plugin.lsp.mason")
 require("plugin.lsp.lsp")
 require("plugin.lsp.cmp")
 require("plugin.lsp.null-ls")
+return {}
