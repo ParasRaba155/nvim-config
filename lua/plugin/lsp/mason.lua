@@ -12,6 +12,7 @@ local servers = {
     "dockerls",
     "sqlls",
     "pyright",
+    "harper_ls",
 }
 
 local settings = {
