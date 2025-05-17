@@ -171,4 +171,12 @@ return {
     },
 
     {"sindrets/diffview.nvim"},
+
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        version='2.1.0',
+    }
 }
