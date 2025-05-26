@@ -1,5 +1,4 @@
 local M = {}
-print "hi"
 
 M = {
     settings = {
