@@ -7,7 +7,6 @@ end
 local servers = {
     "lua_ls",
     "gopls",
-    "tsserver",
     "docker_compose_language_service",
     "dockerls",
     "sqlls",
