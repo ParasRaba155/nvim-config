@@ -20,6 +20,7 @@ require'nvim-treesitter.configs'.setup {
         "xml",
         "python",
         "rust",
+        "zig",
     },
     auto_install = false,
 
