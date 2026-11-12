@@ -1,7 +1,7 @@
 return {
     -- telescope
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.6', branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = 'master',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require("telescope").setup({})

@@ -1,12 +1,7 @@
-local utils_status, util = pcall(require, "lspconfig/util")
-if not utils_status then
-    return
-end
 local M = {}
 M = {
     cmd = {"gopls", "serve"},
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
             completeUnimported = true,

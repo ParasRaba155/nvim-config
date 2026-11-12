@@ -30,7 +30,7 @@ local opts         = {
         code_actions.refactoring,
         completion.spell,
         completion.luasnip,
-        diagnostics.staticcheck,
+        -- diagnostics.staticcheck,
         -- diagnostics.eslint,
         diagnostics.golangci_lint,
         diagnostics.todo_comments,
